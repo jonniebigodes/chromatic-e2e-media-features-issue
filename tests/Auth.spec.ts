@@ -4,7 +4,7 @@ import { expect, takeSnapshot, test} from '@chromatic-com/playwright'
 // Check if the desribe block is already present in Chromatic documentation
 test.describe('Authentication - with high contrast', () => {
     test.use({
-      //forcedColors: 'active',
+      forcedColors: 'active',
       disableAutoSnapshot: true,
     })
 
@@ -37,7 +37,7 @@ test.describe('Authentication - with high contrast', () => {
 
 test.describe('Authentication - with reduced motion', () => {
     test.use({
-      //prefersReducedMotion: "reduce",
+      prefersReducedMotion: "reduce",
       disableAutoSnapshot: true,
     })
 
