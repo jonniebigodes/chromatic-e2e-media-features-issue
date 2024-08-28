@@ -2,7 +2,7 @@
 describe('Authentication - with high contrast', () => {
   it('should authenticate a user in high contrast mode ', {
       env: {
-        //forcedColors: 'active',
+        forcedColors: 'active',
         disableAutoSnapshot: true,
       }
     }, () => {
@@ -26,7 +26,7 @@ describe('Authentication - with high contrast', () => {
 describe('Authentication - with reduced motion', () => {
   it('should authenticate a user with reduced motion ', {
     env:{
-      //prefersReducedMotion: 'reduce',
+      prefersReducedMotion: 'reduce',
       disableAutoSnapshot: true,
     }
   }, () => {
