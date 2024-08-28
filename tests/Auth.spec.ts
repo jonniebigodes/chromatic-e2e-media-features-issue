@@ -12,26 +12,26 @@ test.describe('Authentication - with high contrast', () => {
       const email = 'test@email.com'
       const password = 'k12h1k0$5;lpa@Afn'
 
-        await page.goto('/login')
+      await page.goto('/login')
         // Take a snapshot of the initial state of the login page
-        await page.screenshot({
+      await page.screenshot({
           path: "./test-results/InitialLoginStateHighContrast.png",
           fullPage: true,
-        })
-        await takeSnapshot(page, 'Playwright - High Contrast - Initial state of the login page', testInfo)
+      })
+      await takeSnapshot(page, 'Playwright - High Contrast - Initial state of the login page', testInfo)
 
-        await page.locator('input[name="email"]').fill(email)
-        await page.locator('input[name="password"]').fill(password)
+      await page.locator('input[name="email"]').fill(email)
+      await page.locator('input[name="password"]').fill(password)
 
 
 
         // Take a snapshot of the filled form
          // Take a snapshot of the initial state of the login page
-         await page.screenshot({
-            path: "./test-results/FinalLoginStateHighContrast.png",
-            fullPage: true,
-          })
-        await takeSnapshot(page, 'Playwright - High Contrast - Filled form', testInfo)
+      await page.screenshot({
+        path: "./test-results/FinalLoginStateHighContrast.png",
+        fullPage: true,
+      })
+      await takeSnapshot(page, 'Playwright - High Contrast - Filled form', testInfo)
     })
 })
 
@@ -45,21 +45,21 @@ test.describe('Authentication - with reduced motion', () => {
        const email = 'test@email.com'
        const password = 'password'
 
-        await page.goto('/login')
+      await page.goto('/login')
         // Take a snapshot of the initial state of the login page
-        await page.screenshot({
-          path: "./test-results/InitialLoginStateReducedMotion.png",
+      await page.screenshot({
+        path: "./test-results/InitialLoginStateReducedMotion.png",
+        fullPage: true,
+      })
+      await takeSnapshot(page, 'Playwright - Reduced Motion - Initial state of the login page', testInfo)
+
+
+      await page.locator('input[name="email"]').fill(email);
+      await page.locator('input[name="password"]').fill(password);
+      await page.screenshot({
+          path: "./test-results/FinalLoginStateReducedMotion.png",
           fullPage: true,
-        })
-        await takeSnapshot(page, 'Playwright - Reduced Motion - Initial state of the login page', testInfo)
-
-
-        await page.locator('input[name="email"]').fill(email);
-        await page.locator('input[name="password"]').fill(password);
-         await page.screenshot({
-            path: "./test-results/FinalLoginStateReducedMotion.png",
-            fullPage: true,
-          })
-        await takeSnapshot(page, 'Playwright - Reduced Motion - Filled form', testInfo)
+      })
+      await takeSnapshot(page, 'Playwright - Reduced Motion - Filled form', testInfo)
     })
 })
