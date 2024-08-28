@@ -1,18 +1,13 @@
-import { StoryFn, Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { MultiStepForm } from './MultiStepForm'
 
-export default {
+const meta = {
   title: 'Pages/CheckoutPage/Components/MultiStepForm',
   component: MultiStepForm,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/3Q1HTCalD0lJnNvcMoEw1x/Mealdrop?type=design&node-id=426-3309&mode=design&t=PGeoMU7t8HOFToQL-4',
-    },
-  },
-} as Meta<typeof MultiStepForm>
+} satisfies Meta<typeof MultiStepForm>
 
-const Template: StoryFn<typeof MultiStepForm> = () => <MultiStepForm />
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Default = Template.bind({})
+export const Default: Story = {}
