@@ -45,4 +45,9 @@ yarn-error.log*
 /blob-report/
 /playwright/.cache/
 chromatic-diagnostics.json
-cypress/downloads/chromatic-archives
+cypress/downloads
+cypress/screenshots
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

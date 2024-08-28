@@ -37,7 +37,13 @@
     "test-storybook": "test-storybook",
     "test-storybook:json": "test-storybook --index-json",
     "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"yarn build-storybook:test && npx serve build/storybook --listen 6006 --no-request-logging\" \"wait-on tcp:6006 && yarn test-storybook\"",
-    "test-storybook:json:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"yarn build-storybook:test && npx serve build/storybook --listen 6006 --no-request-logging\" \"wait-on tcp:6006 && SKIP_SNAPSHOTS=true yarn test-storybook:json\""
+    "test-storybook:json:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"yarn build-storybook:test && npx serve build/storybook --listen 6006 --no-request-logging\" \"wait-on tcp:6006 && SKIP_SNAPSHOTS=true yarn test-storybook:json\"",
+    "cypress": "cypress open",
+    "cypress:chromatic": "ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx cypress run",
+    "cypress:debug": "DEBUG=cypress:* ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 cypress run",
+    "cypress:config-debug": "DEBUG=cypress:server:config ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 cypress run",
+    "cypress:config-debug-project": "DEBUG=cypress:server:project ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 cypress run",
+    "cypress:version": "cypress version"
   },
   "eslintConfig": {
     "extends": "react-app"
