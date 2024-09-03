@@ -4,13 +4,13 @@ import { expect, takeSnapshot, test} from '@chromatic-com/playwright'
 // Check if the desribe block is already present in Chromatic documentation
 test.describe('Authentication - with high contrast', () => {
     test.use({
-      //forcedColors: 'active',
+      forcedColors: 'active',
       disableAutoSnapshot: true,
     })
 
     test('User can log in high contrast mode', async ({page}, testInfo) => {
       const email = 'test@email.com'
-      const password = 'k12h1k0$5;lpa@Afn'
+      const password = 'password'
 
       await page.goto('/login')
         // Take a snapshot of the initial state of the login page
@@ -23,10 +23,10 @@ test.describe('Authentication - with high contrast', () => {
       await page.locator('input[name="email"]').fill(email)
       await page.locator('input[name="password"]').fill(password)
 
+      await page.getByRole('button', { name: 'Login' }).click()
 
-
-        // Take a snapshot of the filled form
-         // Take a snapshot of the initial state of the login page
+      // Take a snapshot of the filled form
+      // Take a snapshot of the initial state of the login page
       await page.screenshot({
         path: "./test-results/FinalLoginStateHighContrast.png",
         fullPage: true,
@@ -37,7 +37,7 @@ test.describe('Authentication - with high contrast', () => {
 
 test.describe('Authentication - with reduced motion', () => {
     test.use({
-      //prefersReducedMotion: "reduce",
+      prefersReducedMotion: "reduce",
       disableAutoSnapshot: true,
     })
 
@@ -56,6 +56,8 @@ test.describe('Authentication - with reduced motion', () => {
 
       await page.locator('input[name="email"]').fill(email);
       await page.locator('input[name="password"]').fill(password);
+
+      await page.getByRole('button', { name: 'Login' }).click()
       await page.screenshot({
           path: "./test-results/FinalLoginStateReducedMotion.png",
           fullPage: true,

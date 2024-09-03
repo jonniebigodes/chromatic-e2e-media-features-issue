@@ -26,7 +26,7 @@ export const WithForcedColors: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const email = 'test@email.com'
-    const password = 'k12h1k0$5;lpa@Afn'
+    const password = 'password'
     await userEvent.type(canvas.getByLabelText('Email'), email)
     await userEvent.type(canvas.getByLabelText('Password'), password)
     await canvas.getByRole('button', { name: 'Login' }).click()
