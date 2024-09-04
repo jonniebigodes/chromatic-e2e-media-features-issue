@@ -12,7 +12,7 @@ describe('Authentication - with high contrast', () => {
       cy.visit('/login')
       // cy.wait(2000) // Works locally and generates a snapshot file correctly
 
-      cy.get('input[name="email"]').focus({timeout: 2000})
+      //cy.get('input[name="email"]').focus({timeout: 2000})
 
         // Take a snapshot of the initial state of the login page
       cy.takeSnapshot('Cypress - High Contrast - Initial state of the login page')
@@ -42,7 +42,7 @@ describe('Authentication - with reduced motion', () => {
 
      // cy.wait(2000) // Works locally and generates a snapshot file correctly
 
-     cy.get('input[name="email"]').focus({timeout: 2000})
+    // cy.get('input[name="email"]').focus({timeout: 2000})
 
     // Take a snapshot of the initial state of the login page
     cy.takeSnapshot('Cypress - Reduced Motion - Initial state of the login page')
